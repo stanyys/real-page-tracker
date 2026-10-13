@@ -16,7 +16,7 @@ def index():
         page_views = redis().incr("page_views")
     except RedisError:
         app.logger.exception("Redis error")  # pylint: disable=E1101
-        return "Sorry, something went wrong \N{PENSIVE FACE}", 500
+        return "Sorry, something went wrong \N{THINKING FACE}", 500
     return f"This page has been seen {page_views} times."
 
 
